@@ -1,0 +1,319 @@
+@import '../vendor/smart-grid/smart-grid.sass'
+@import 'fonts'
+@import 'variables'
+
++reset()
+
+body
+  font-family: 'Fira Sans', sans-serif
+  font-weight: 300
+  background-color: #212227
+
+.container
+  +wrapper
+//header
+header
+  background: url("../img/header-bg.png") no-repeat center
+  background-size: cover
+  overflow: hidden
+
+.topLine
+  margin: 80px 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.logo
+  font-size: 60px
+  font-weight: 800
+  color: #fff
+  width: 80px
+  height: 80px
+  background-color: #000
+  text-align: center
+  line-height: 80px
+
+//burger
+.menu-btn
+  display: block
+  position: relative
+  width: 80px
+  height: 80px
+  cursor: pointer
+
+  span
+    display: block
+    position: absolute
+    top: 40px
+    right: 25px
+    width: 35px
+    height: 5px
+    background: #ff3264
+
+    &:before, &:after
+      content: ""
+      position: absolute
+      display: block
+      left: 0
+      width: 100%
+      height: 5px
+      background-color: #ff3264
+
+  span::before
+    bottom: 13px
+
+  span::after
+    top: 13px
+
+.midLine
+  +row-flex
+  flex-direction: column
+  padding-top: 120px
+  padding-bottom: 270px
+
+  &__content
+    +col()
+    +size(7)
+    +size-md(12)
+    +md(text-align, center)
+
+  &__title
+   font-size: 72px
+   margin-bottom: 25px
+
+  &__subtitle
+    font-size: 30px
+    line-height: 1.5
+
+    span
+      font-weight: 700
+
+.about
+
+  &__content
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+  &__left
+    +col-padding
+    +size(6)
+    +size-md(12)
+    background: url("../img/about-left.png") no-repeat center center
+    background-size: cover
+    min-height: 520px
+
+  &__right
+    +col-padding
+    +size(6)
+    +size-md(12)
+    background-color: #fff
+
+  &__some
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 500px
+    padding: 0 40px
+
+  &__title
+    margin-bottom: 40px
+
+    h2
+      +sm(font-size, 20px)
+      font-size: 24px
+      font-weight: 700
+      text-transform: uppercase
+
+  &__subtitle
+    +sm(font-size, 28px)
+    font-size: 36px
+    font-weight: 300
+
+
+.gallery
+
+
+  &__items
+    display: flex
+    justify-content: center
+
+  &__item
+    width: 25%
+
+    img
+      display: block
+      width: 100%
+      margin: auto
+
+.video
+  width: 100%
+  height: 100%
+  margin: 0 auto
+  position: relative
+
+
+#video
+  object-fit: cover
+  position: relative
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 1
+
+.video__block
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 2
+  box-sizing: border-box
+  background-color: #212227
+  padding: 115px 90px 75px 35px
+  +md(padding, 10px)
+
+  &--title
+    margin-bottom: 40px
+    +md(text-align, center)
+
+    h3
+      font-size: 24px
+      color: #2ebd59
+      text-transform: uppercase
+      +md(font-size, 14px)
+
+  &--text
+    margin-bottom: 50px
+    +sm(display, none)
+
+    p
+      color: #fff
+      line-height: 1.3
+      +md(text-align, center)
+      +md(font-size, 14px)
+
+
+  &--btn
+    display: block
+    margin: 0 auto
+    background: none
+    outline: none
+    cursor: pointer
+    border: 2px solid #2ebd59
+    border-radius: 30px
+    width: 175px
+    font-size: 18px
+    font-weight: bold
+    text-transform: uppercase
+    color: #2ebd59
+    padding: 15px 0
+    +md(font-size, 12px)
+
+.music
+  display: flex
+  flex-wrap: wrap
+
+  &__content
+    padding: 135px 75px 145px 130px
+    +md(padding, 10px)
+
+  &__left
+    background-color: #2ebd59
+    width: 50%
+    box-sizing: border-box
+    +md(width, 100%)
+
+  &__right
+    background-color: #282b2f
+    width: 50%
+    box-sizing: border-box
+    +md(width, 100%)
+
+  &__title
+    margin-bottom: 45px
+    h3
+      font-size: 24px
+      color: #fff
+
+  &__text
+    margin-bottom: 35px
+    font-size: 36px
+    color: #fff
+
+  &__btn
+    display: block
+    background: none
+    outline: none
+    cursor: pointer
+    border: 2px solid #fff
+    border-radius: 30px
+    width: 275px
+    font-size: 18px
+    font-weight: bold
+    text-transform: uppercase
+    color: #fff
+    padding: 15px 0
+
+footer
+  background: #212227
+
+  .rights
+    margin: 30px 0
+    text-align: center
+
+.footer__items
+  +wrapper
+  display: flex
+  margin: 100px auto 0
+  flex-wrap: wrap
+  justify-content: center
+
+.footer__item
+  color: #fff
+  font-family: FiraSans, sans-serif
+
+  &--1
+    +size(3)
+    +md(width, 100%)
+    +md(margin-right, 0)
+    margin-right: 100px
+
+  &--2
+    +size(2)
+    +md(width, 100%)
+    +md(margin-right, 0)
+    margin-right: 100px
+
+  &--3
+    +size(5)
+    +md(width, 100%)
+
+    input
+      width: 100%
+      display: block
+      background-color: #4D4E52
+      border: none
+      outline: none
+      height: 60px
+
+  &--title
+    font-size: 18px
+    text-transform: uppercase
+    font-weight: 800
+    margin-bottom: 35px
+
+  &--text
+    font-size: 14px
+    line-height: 1.3
+    margin-bottom: 25px
+
+  &--social
+
+    h3
+      margin-top: 50px
+
+
+
+
+
+
+
